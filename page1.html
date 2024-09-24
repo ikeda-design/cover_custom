@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>顔イラストカスタマイズ - Step 1</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>顔イラストカスタマイズ - Step 1</h1>
+
+  <div class="container">
+    <div class="preview" id="preview">
+      <img id="skin" src="images/skin1.png" alt="肌の色">
+      <img id="hair" src="images/hair1.png" alt="髪型">
+      <img id="hairColor" src="images/hairColor1.png" alt="髪色">
+      <img id="expression" src="images/expression1.png" alt="表情">
+    </div>
+
+    <div class="controls">
+      <h2>肌の色</h2>
+      <label>
+        <input type="radio" name="skinColor" value="skin1.png" onchange="updateImage('skin', this.value)" checked> 肌色1
+      </label>
+      <label>
+        <input type="radio" name="skinColor" value="skin2.png" onchange="updateImage('skin', this.value)"> 肌色2
+      </label>
+      <label>
+        <input type="radio" name="skinColor" value="skin3.png" onchange="updateImage('skin', this.value)"> 肌色3
+      </label>
+
+      <h2>髪型</h2>
+      <label>
+        <input type="radio" name="hairStyle" value="hair1.png" onchange="updateImage('hair', this.value)" checked> 髪型1
+      </label>
+      <label>
+        <input type="radio" name="hairStyle" value="hair2.png" onchange="updateImage('hair', this.value)"> 髪型2
+      </label>
+      <!-- (9つの髪型の選択肢) -->
+      
+      <h2>髪色</h2>
+      <label>
+        <input type="radio" name="hairColor" value="hairColor1.png" onchange="updateImage('hairColor', this.value)" checked> 髪色1
+      </label>
+      <label>
+        <input type="radio" name="hairColor" value="hairColor2.png" onchange="updateImage('hairColor', this.value)"> 髪色2
+      </label>
+
+      <h2>表情</h2>
+      <label>
+        <input type="radio" name="expressionStyle" value="expression1.png" onchange="updateImage('expression', this.value)" checked> 表情1
+      </label>
+      <label>
+        <input type="radio" name="expressionStyle" value="expression2.png" onchange="updateImage('expression', this.value)"> 表情2
+      </label>
+
+      <button onclick="saveSelections()">次へ</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

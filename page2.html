@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>表紙カスタマイズ - Step 2</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>表紙カスタマイズ - Step 2</h1>
+
+  <div class="container">
+    <div class="preview" id="preview">
+      <img id="skin" alt="肌の色">
+      <img id="hair" alt="髪型">
+      <img id="hairColor" alt="髪色">
+      <img id="expression" alt="表情">
+    </div>
+
+    <div class="controls">
+      <h2>表紙の色</h2>
+      <input type="color" id="backgroundColor" onchange="updateBackgroundColor(this.value)" value="#ffffff">
+
+      <h2>タイトルのアイコン</h2>
+      <label>
+        <input type="radio" name="titleIcon" value="icon1.png" onchange="updateImage('titleIcon', this.value)" checked> アイコン1
+      </label>
+      <label>
+        <input type="radio" name="titleIcon" value="icon2.png" onchange="updateImage('titleIcon', this.value)"> アイコン2
+      </label>
+      <label>
+        <input type="radio" name="titleIcon" value="icon3.png" onchange="updateImage('titleIcon', this.value)"> アイコン3
+      </label>
+    </div>
+
+    <div id="finalPreview">
+      <img id="titleIcon" src="images/icon1.png" alt="タイトルアイコン">
+    </div>
+
+    <button onclick="goBack()">前のページに戻る</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
