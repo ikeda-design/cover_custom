@@ -7,51 +7,49 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>顔イラストカスタマイズ - Step 1</h1>
+  <h1>Step 1 : 顔のカスタマイズ</h1>
 
-  <div class="container">
+  <div class="container step1">
     <div class="preview" id="preview">
-      <img id="skin" src="images/skin1.png" alt="肌の色">
-      <img id="hair" src="images/hair1.png" alt="髪型">
-      <img id="hairColor" src="images/hairColor1.png" alt="髪色">
-      <img id="expression" src="images/expression1.png" alt="表情">
+      <img id="face" src="images/face/face_01.png" alt="肌の色">
+      <img id="hair" src="images/hair/hair_01_BK.png" alt="髪型">
+      <img id="motion" src="images/motion/motion_01.png" alt="表情">
     </div>
 
     <div class="controls">
       <h2>肌の色</h2>
       <label>
-        <input type="radio" name="skinColor" value="skin1.png" onchange="updateImage('skin', this.value)" checked> 肌色1
+        <input type="radio" name="faceColor" value="01" onchange="updateFaceColor(this.value)" checked> 肌色1
       </label>
       <label>
-        <input type="radio" name="skinColor" value="skin2.png" onchange="updateImage('skin', this.value)"> 肌色2
+        <input type="radio" name="faceColor" value="02" onchange="updateFaceColor(this.value)"> 肌色2
       </label>
       <label>
-        <input type="radio" name="skinColor" value="skin3.png" onchange="updateImage('skin', this.value)"> 肌色3
+        <input type="radio" name="faceColor" value="03" onchange="updateFaceColor(this.value)"> 肌色3
       </label>
 
       <h2>髪型</h2>
       <label>
-        <input type="radio" name="hairStyle" value="hair1.png" onchange="updateImage('hair', this.value)" checked> 髪型1
+        <input type="radio" name="hairStyle" value="01" onchange="updateHairStyle(this.value)" checked> 髪型1
       </label>
       <label>
-        <input type="radio" name="hairStyle" value="hair2.png" onchange="updateImage('hair', this.value)"> 髪型2
+        <input type="radio" name="hairStyle" value="02" onchange="updateHairStyle(this.value)"> 髪型2
       </label>
-      <!-- (9つの髪型の選択肢) -->
       
       <h2>髪色</h2>
       <label>
-        <input type="radio" name="hairColor" value="hairColor1.png" onchange="updateImage('hairColor', this.value)" checked> 髪色1
+        <input type="radio" name="hairColor" value="BK" onchange="updateHairColor(this.value)" checked> 黒
       </label>
       <label>
-        <input type="radio" name="hairColor" value="hairColor2.png" onchange="updateImage('hairColor', this.value)"> 髪色2
+        <input type="radio" name="hairColor" value="BR" onchange="updateHairColor(this.value)"> 茶色
       </label>
 
       <h2>表情</h2>
       <label>
-        <input type="radio" name="expressionStyle" value="expression1.png" onchange="updateImage('expression', this.value)" checked> 表情1
+        <input type="radio" name="motion" value="01" onchange="updateMotion(this.value)" checked> 表情1
       </label>
       <label>
-        <input type="radio" name="expressionStyle" value="expression2.png" onchange="updateImage('expression', this.value)"> 表情2
+        <input type="radio" name="motion" value="02" onchange="updateMotion(this.value)"> 表情2
       </label>
 
       <button onclick="saveSelections()">次へ</button>

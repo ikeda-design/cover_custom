@@ -7,34 +7,42 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>表紙カスタマイズ - Step 2</h1>
+  <h1>Step 2 : 表紙のカスタマイズ</h1>
 
-  <div class="container">
+  <div class="container step2">
     <div class="preview" id="preview">
-      <img id="skin" alt="肌の色">
+      <img id="cover" src="images/back/back_BL.png" alt="表紙の色">
+      <img id="titleIcon" src="images/title/title_non.png" alt="タイトルのアイコン">
+      <img id="face" alt="肌の色">
       <img id="hair" alt="髪型">
-      <img id="hairColor" alt="髪色">
-      <img id="expression" alt="表情">
+      <img id="motion" alt="表情">
     </div>
 
     <div class="controls">
       <h2>表紙の色</h2>
-      <input type="color" id="backgroundColor" onchange="updateBackgroundColor(this.value)" value="#ffffff">
+      <label>
+        <input type="radio" name="coverColor" value="BL" onchange="updateCoverColor(this.value)" checked> あお
+      </label>
+      <label>
+        <input type="radio" name="coverColor" value="BR" onchange="updateCoverColor(this.value)"> ちゃいろ
+      </label>
+      <label>
+        <input type="radio" name="coverColor" value="PI" onchange="updateCoverColor(this.value)"> ピンク
+      </label>
+      <label>
+        <input type="radio" name="coverColor" value="PU" onchange="updateCoverColor(this.value)"> むらさき
+      </label>
 
       <h2>タイトルのアイコン</h2>
       <label>
-        <input type="radio" name="titleIcon" value="icon1.png" onchange="updateImage('titleIcon', this.value)" checked> アイコン1
+        <input type="radio" name="titleIcon" value="non" onchange="updateTitleIcon(this.value)" checked> なし
       </label>
       <label>
-        <input type="radio" name="titleIcon" value="icon2.png" onchange="updateImage('titleIcon', this.value)"> アイコン2
+        <input type="radio" name="titleIcon" value="kuma" onchange="updateTitleIcon(this.value)"> クマ
       </label>
       <label>
-        <input type="radio" name="titleIcon" value="icon3.png" onchange="updateImage('titleIcon', this.value)"> アイコン3
+        <input type="radio" name="titleIcon" value="usagi" onchange="updateTitleIcon(this.value)"> ウサギ
       </label>
-    </div>
-
-    <div id="finalPreview">
-      <img id="titleIcon" src="images/icon1.png" alt="タイトルアイコン">
     </div>
 
     <button onclick="goBack()">前のページに戻る</button>
