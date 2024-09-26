@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Step 1 : 顔のカスタマイズ</h1>
+  <h1>Step 1 : うちの子を作ってね</h1>
 
   <div class="container step1">
     <div class="preview" id="preview">
@@ -17,40 +17,48 @@
     </div>
 
     <div class="controls">
-      <h2>肌の色</h2>
-      <label>
-        <input type="radio" name="faceColor" value="01" onchange="updateFaceColor(this.value)" checked> 肌色1
-      </label>
-      <label>
-        <input type="radio" name="faceColor" value="02" onchange="updateFaceColor(this.value)"> 肌色2
-      </label>
-      <label>
-        <input type="radio" name="faceColor" value="03" onchange="updateFaceColor(this.value)"> 肌色3
-      </label>
+      <h2>顔の色</h2>
+      <div class="control-group">
+        <label>
+          <input type="radio" name="faceColor" value="01" onchange="updateFaceColor(this.value)" checked> 肌色1
+        </label>
+        <label>
+          <input type="radio" name="faceColor" value="02" onchange="updateFaceColor(this.value)"> 肌色2
+        </label>
+        <label>
+          <input type="radio" name="faceColor" value="03" onchange="updateFaceColor(this.value)"> 肌色3
+        </label>
+      </div>
 
       <h2>髪型</h2>
-      <label>
-        <input type="radio" name="hairStyle" value="01" onchange="updateHairStyle(this.value)" checked> 髪型1
-      </label>
-      <label>
-        <input type="radio" name="hairStyle" value="02" onchange="updateHairStyle(this.value)"> 髪型2
-      </label>
+      <div class="control-group">
+        <label>
+          <input type="radio" name="hairStyle" value="01" onchange="updateHairStyle(this.value)" checked> 髪型1
+        </label>
+        <label>
+          <input type="radio" name="hairStyle" value="02" onchange="updateHairStyle(this.value)"> 髪型2
+        </label>
+      </div>
       
       <h2>髪色</h2>
-      <label>
-        <input type="radio" name="hairColor" value="BK" onchange="updateHairColor(this.value)" checked> 黒
-      </label>
-      <label>
-        <input type="radio" name="hairColor" value="BR" onchange="updateHairColor(this.value)"> 茶色
-      </label>
+      <div class="control-group">
+        <label>
+          <input type="radio" name="hairColor" value="BK" onchange="updateHairColor(this.value)" checked> 黒
+        </label>
+        <label>
+          <input type="radio" name="hairColor" value="BR" onchange="updateHairColor(this.value)"> 茶色
+        </label>
+      </div>
 
       <h2>表情</h2>
+      <div class="control-group">
+        <label>
+          <input type="radio" name="motion" value="01" onchange="updateMotion(this.value)" checked> 表情1
+        </label>
       <label>
-        <input type="radio" name="motion" value="01" onchange="updateMotion(this.value)" checked> 表情1
-      </label>
-      <label>
-        <input type="radio" name="motion" value="02" onchange="updateMotion(this.value)"> 表情2
-      </label>
+          <input type="radio" name="motion" value="02" onchange="updateMotion(this.value)"> 表情2
+        </label>
+      </div>
 
       <button onclick="saveSelections()">次へ</button>
     </div>

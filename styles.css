@@ -1,9 +1,51 @@
-body {
+  body {
     font-family: Arial, sans-serif;
     text-align: center;
     background-color: #f0f0f0;
     margin: 0;
     padding: 20px;
+    padding-top: 100px; /* h1の高さ + 余白 */
+  }
+
+  h1 {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 20px 0;
+    z-index: 101; /* プレビューより上に表示 */
+  }
+
+  .controls h2 {
+    background-color: #b3b3b3;
+    color: black;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 20px;
+    margin-bottom: 0px;
+    font-size: 18px;
+    text-align: center;
+  }
+  
+  .control-group {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    margin-top: 0px;
+    margin-bottom: 20px;
+  }
+  
+  label {
+    display: inline-block;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    font-size: 16px;
   }
   
   .container {
@@ -14,9 +56,13 @@ body {
   }
   
   .preview {
-    position: relative;
+    position: fixed;
+    top: 80px; /* h1の高さ + 余白 */
+    left: 50%;
+    transform: translateX(-50%);
     margin-bottom: 20px;
     background-color: #ffffff;
+    z-index: 100;
   }
   
   .step1 .preview {
@@ -42,6 +88,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 10px;
+    margin-top: 400px; /* プレビューの高さ + h1の高さ + 余白 */
   }
   
   label {
@@ -67,9 +114,30 @@ body {
   height: 100%;
 }
 
-.step2 #face, .step2 #hair, .step2 #motion {
-  width: 40%;
-  height: 60%;
-  top: 20%;
-  left: 30%;
+  .step2 #face, .step2 #hair, .step2 #motion {
+    width: 50%;  /* 幅を調整（例：50%）*/
+    height: 70%; /* 高さを調整（例：70%）*/
+    top: 50%;    /* 上端を中央に*/
+    left: 50%;   /* 左端を中央に*/
+    transform: translate(-50%, -50%); /* 中央揃え*/
+  }
+
+button {
+  font-size: 18px;
+  padding: 12px 24px;
+  margin: 20px 0;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+button:active {
+  background-color: #3e8e41;
 }

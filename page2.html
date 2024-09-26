@@ -7,7 +7,7 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Step 2 : 表紙のカスタマイズ</h1>
+  <h1>Step 2 : 表紙を選んでね</h1>
 
   <div class="container step2">
     <div class="preview" id="preview">
@@ -20,32 +20,35 @@
 
     <div class="controls">
       <h2>表紙の色</h2>
-      <label>
-        <input type="radio" name="coverColor" value="BL" onchange="updateCoverColor(this.value)" checked> あお
-      </label>
-      <label>
-        <input type="radio" name="coverColor" value="BR" onchange="updateCoverColor(this.value)"> ちゃいろ
-      </label>
-      <label>
-        <input type="radio" name="coverColor" value="PI" onchange="updateCoverColor(this.value)"> ピンク
-      </label>
-      <label>
-        <input type="radio" name="coverColor" value="PU" onchange="updateCoverColor(this.value)"> むらさき
-      </label>
+      <div class="control-group">
+        <label>
+          <input type="radio" name="coverColor" value="BL" onchange="updateCoverColor(this.value)" checked> あお
+        </label>
+        <label>
+          <input type="radio" name="coverColor" value="BR" onchange="updateCoverColor(this.value)"> ちゃいろ
+        </label>
+        <label>
+          <input type="radio" name="coverColor" value="PI" onchange="updateCoverColor(this.value)"> ぴんく
+        </label>
+        <label>
+          <input type="radio" name="coverColor" value="PU" onchange="updateCoverColor(this.value)"> むらさき
+        </label>
+      </div>
 
-      <h2>タイトルのアイコン</h2>
+      <h2>「おくすり手帳」横のアイコン</h2>
+      <div class="control-group">
+        <label>
+          <input type="radio" name="titleIcon" value="non" onchange="updateTitleIcon(this.value)" checked> なし
+        </label>
+        <label>
+          <input type="radio" name="titleIcon" value="kuma" onchange="updateTitleIcon(this.value)"> くま
+        </label>
       <label>
-        <input type="radio" name="titleIcon" value="non" onchange="updateTitleIcon(this.value)" checked> なし
-      </label>
-      <label>
-        <input type="radio" name="titleIcon" value="kuma" onchange="updateTitleIcon(this.value)"> クマ
-      </label>
-      <label>
-        <input type="radio" name="titleIcon" value="usagi" onchange="updateTitleIcon(this.value)"> ウサギ
-      </label>
-    </div>
+          <input type="radio" name="titleIcon" value="usagi" onchange="updateTitleIcon(this.value)"> うさぎ
+        </label>
+      </div>
 
-    <button onclick="goBack()">前のページに戻る</button>
+    <button onclick="goBack()">戻る</button>
   </div>
 
   <script src="script.js"></script>
