@@ -21,6 +21,7 @@
   .controls h2 {
     background-color: #b3b3b3;
     color: black;
+    width: 250px;
     padding: 10px;
     border-radius: 5px;
     margin-top: 20px;
