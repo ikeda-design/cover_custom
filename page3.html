@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>顔イラストカスタマイズ - 確認</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>確認：うちの子できたよ！</h1>
+
+  <div class="container confirm">
+    <div class="preview" id="preview">
+      <img id="face" src="" alt="肌の色">
+      <img id="hair" src="" alt="髪型">
+      <img id="motion" src="" alt="表情">
+      <img id="clothes" src="" alt="服">
+    </div>
+
+    <div class="selections">
+      <h2>選択内容</h2>
+      <p>肌の色: <span id="faceColorText"></span></p>
+      <p>髪型: <span id="hairStyleText"></span></p>
+      <p>髪色: <span id="hairColorText"></span></p>
+      <p>表情: <span id="motionText"></span></p>
+      <p>服: <span id="clothesText"></span></p>
+    </div>
+
+    <div class="buttons">
+      <button onclick="window.location.href='index.html'">最初からやり直す</button>
+      <button onclick="saveImage()">画像を保存</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+  <script>
+    window.onload = function() {
+      loadSelections();
+      updatePreview();
+      updateSelectionText();
+    }
+  </script>
+</body>
+</html>

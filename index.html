@@ -11,52 +11,80 @@
 
   <div class="container step1">
     <div class="preview" id="preview">
+      <img id="hairBack" src="" alt="髪の背面" style="display: none;">
       <img id="face" src="images/face/face_01.png" alt="肌の色">
       <img id="hair" src="images/hair/hair_01_BK.png" alt="髪型">
       <img id="motion" src="images/motion/motion_01.png" alt="表情">
     </div>
 
     <div class="controls">
-      <h2>顔の色</h2>
+      <h2>肌の色</h2>
       <div class="control-group">
         <label>
-          <input type="radio" name="faceColor" value="01" onchange="updateFaceColor(this.value)" checked> 肌色1
+          <input type="radio" name="faceColor" value="01" onchange="updateFaceColor(this.value)" checked> 01
         </label>
         <label>
-          <input type="radio" name="faceColor" value="02" onchange="updateFaceColor(this.value)"> 肌色2
+          <input type="radio" name="faceColor" value="02" onchange="updateFaceColor(this.value)"> 02
         </label>
         <label>
-          <input type="radio" name="faceColor" value="03" onchange="updateFaceColor(this.value)"> 肌色3
+          <input type="radio" name="faceColor" value="03" onchange="updateFaceColor(this.value)"> 03
         </label>
       </div>
 
       <h2>髪型</h2>
       <div class="control-group">
+        <h3>ベビー</h3> 
+        <label>
+          <input type="radio" name="hairStyle" value="01" onchange="updateBabyHairStyle(this.value)"> 01
+        </label>
+        <label>
+          <input type="radio" name="hairStyle" value="02" onchange="updateBabyHairStyle(this.value)"> 02
+        </label>
+        <label>
+          <input type="radio" name="hairStyle" value="03" onchange="updateBabyHairStyle(this.value)"> 03
+        </label>
+      </div>
+      <div class="control-group">
+        <h3>キッズ</h3>
         <label>
           <input type="radio" name="hairStyle" value="01" onchange="updateHairStyle(this.value)" checked> 髪型1
         </label>
         <label>
           <input type="radio" name="hairStyle" value="02" onchange="updateHairStyle(this.value)"> 髪型2
         </label>
+        <label>
+          <input type="radio" name="hairStyle" value="03" onchange="updateHairStyle(this.value)"> 髪型3
+        </label>
+        <label>
+          <input type="radio" name="hairStyle" value="04" onchange="updateHairStyle(this.value)"> 髪型4
+        </label>
+        <label>
+          <input type="radio" name="hairStyle" value="05" onchange="updateHairStyle(this.value)"> 髪型5
+        </label>
+        <label>
+          <input type="radio" name="hairStyle" value="06" onchange="updateHairStyle(this.value)"> 髪型6
+        </label>
       </div>
       
-      <h2>髪色</h2>
-      <div class="control-group">
-        <label>
-          <input type="radio" name="hairColor" value="BK" onchange="updateHairColor(this.value)" checked> 黒
-        </label>
-        <label>
-          <input type="radio" name="hairColor" value="BR" onchange="updateHairColor(this.value)"> 茶色
-        </label>
+      <div id="hairColorSection">
+        <h2>髪色</h2>
+        <div class="control-group">
+          <label>
+            <input type="radio" name="hairColor" value="BK" onchange="updateHairColor(this.value)" checked> 黒
+          </label>
+          <label>
+            <input type="radio" name="hairColor" value="BR" onchange="updateHairColor(this.value)"> 茶色
+          </label>
+        </div>
       </div>
 
       <h2>表情</h2>
       <div class="control-group">
         <label>
-          <input type="radio" name="motion" value="01" onchange="updateMotion(this.value)" checked> 表情1
+          <input type="radio" name="motion" value="01" onchange="updateMotion(this.value)" checked> A
         </label>
       <label>
-          <input type="radio" name="motion" value="02" onchange="updateMotion(this.value)"> 表情2
+          <input type="radio" name="motion" value="02" onchange="updateMotion(this.value)"> B
         </label>
       </div>
 

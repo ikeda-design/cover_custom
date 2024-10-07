@@ -131,13 +131,13 @@
   height: 100%;
 }
 
-  .step2 #face, .step2 #hair, .step2 #motion {
-    width: 50%;  /* 幅を調整（例：50%）*/
-    height: 70%; /* 高さを調整（例：70%）*/
-    top: 50%;    /* 上端を中央に*/
-    left: 50%;   /* 左端を中央に*/
-    transform: translate(-50%, -50%); /* 中央揃え*/
-  }
+.step2 #face, .step2 #hair, .step2 #hairBack, .step2 #motion {
+  width: 50%;  /* 幅を調整（例：50%）*/
+  height: 70%; /* 高さを調整（例：70%）*/
+  top: 50%;    /* 上端を中央に*/
+  left: 50%;   /* 左端を中央に*/
+  transform: translate(-50%, -50%); /* 中央揃え*/
+}
 
 button {
   font-size: 18px;
@@ -157,4 +157,24 @@ button:hover {
 
 button:active {
   background-color: #3e8e41;
+}
+
+.hidden {
+  display: none;
+}
+
+#hairBack {
+  z-index: 1;
+}
+
+#face {
+  z-index: 2;
+}
+
+#hair {
+  z-index: 3;
+}
+
+#motion {
+  z-index: 4;
 }
