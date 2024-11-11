@@ -70,6 +70,7 @@ function updateMotion(motion) {
 
 function updateCoverColor(color) {
   updateImage('cover', `images/back/back_${color}.png`);
+  currentColor = color;
 }
 
 function updateTitleIcon(icon) {
@@ -141,9 +142,56 @@ function saveSelections() {
       console.log('page2.html以外のページが読み込まれました');
     }
   };
+
+  function updateNamePreview() {
+    const kanjiName = document.getElementById('kanjiName').value;
+    const hiraganaName = document.getElementById('hiraganaName').value;
+    const romajiName = document.getElementById('romajiName').value;
+    
+    document.getElementById('kanjiNameDisplay').textContent = kanjiName;
+    document.getElementById('hiraganaNameDisplay').textContent = hiraganaName;
+    document.getElementById('romajiNameDisplay').textContent = romajiName;
+  }
   
   // 前のページに戻る
   function goBack() {
     window.history.back();
   }
+  
+
+  // 追加するJavaScriptの変更部分
+  let isFront = true; // 表示状態を管理
+  let currentColor = 'BL'; // 初期色を設定（例: 'BL'）
+
+  document.getElementById('togglePreview').addEventListener('click', function() {
+    const frontPreview = document.querySelector('.step1 .preview');
+    const backPreview = document.querySelector('.step2 .preview');
+  
+    // 裏の画像を色に応じて指定
+    const backImageMap = {
+      'BL': 'images/back/back_BL_name.png',
+      'BR': 'images/back/back_BR_name.png',
+      'PI': 'images/back/back_PI_name.png',
+      'PU': 'images/back/back_PU_name.png'
+    };
+  
+    // 裏の画像を設定
+    backPreview.style.backgroundImage = `url(${backImageMap[currentColor]})`;
+    console.log(`裏の画像を設定しました: ${backImageMap[currentColor]}`);
+  
+    if (isFront) {
+      updateImage('coverBack', backImageMap[currentColor]);
+      coverBack.style.display = 'block'; // 裏を表示
+      romajiNameDisplay.style.display = 'block';
+
+      console.log('表を非表示にし、裏を表示しました。');
+    } else {
+      coverBack.style.display = 'none'; // 裏を非表示
+      romajiNameDisplay.style.display = 'none';
+      console.log('裏を非表示にし、表を表示しました。');
+    }
+    
+    isFront = !isFront; // 状態を切り替え
+    console.log(`表示状態が切り替わりました: ${isFront ? '表' : '裏'}`);
+  });
   

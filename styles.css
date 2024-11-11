@@ -1,5 +1,10 @@
   body {
-    font-family: Arial, sans-serif;
+    font-family: 'FOT-筑紫A丸ゴシック Std', sans-serif;
+    font-family: "fot-tsukuardgothic-std", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+
+    /* font-family: Arial, sans-serif; */
     text-align: center;
     background-color: #f0f0f0;
     margin: 0;
@@ -35,15 +40,15 @@
   }
 
   .controls h2 {
-    background-color: #b3b3b3;
-    color: black;
-    width: 250px;
-    padding: 10px;
-    border-radius: 5px;
-    margin-top: 20px;
-    margin-bottom: 0px;
-    font-size: 18px;
-    text-align: center;
+	background-color: #b3b3b3;
+	color: black;
+	width: 250px;
+	padding: 10px;
+	border-radius: 5px;
+	margin-top: 65px;
+	margin-bottom: 0px;
+	font-size: 18px;
+	text-align: center;
   }
   
   .control-group {
@@ -177,4 +182,99 @@ button:active {
 
 #motion {
   z-index: 4;
+}
+
+.toggle-button-container {
+  position: fixed;
+  top: 470px; /* ボタンを表示する位置を調整 */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 200;
+}
+
+.toggle-button-container button {
+  font-size: 18px;
+  padding: 10px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.toggle-button-container button:hover {
+  background-color: #0056b3;
+}
+
+#nameDisplay {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  width: 80%;
+  z-index: 10;
+}
+
+#hiraganaNameDisplay {
+  position: absolute;
+  bottom: 19%; /* ひらがなの位置を調整 */
+  font-size: 9px;
+  font-weight: normal;
+  width: 100%;
+  text-align: center;
+}
+
+#kanjiNameDisplay {
+  position: absolute;
+  bottom: 11%; /* 漢字の位置を調整 */
+  font-size: 18px;
+  width: 100%;
+  text-align: center;}
+
+#romajiNameDisplay {
+  position: absolute;
+  display: none; /* 初期状態では非表示 */
+  z-index: 10; /* 裏の画像を最上位に表示 */
+  font-family: "adventures-unlimited", sans-serif;
+  top: 37%; /* 縦方向中央 */
+  left: 50%; /* 横方向中央 */
+  transform: translate(-50%, -50%); /* 中心に配置 */
+  font-size: 70px; /* フォントサイズを調整 */
+  color: white; /* テキストの色を設定 */
+}
+
+.name-inputs {
+  margin-top: 20px;
+  position: relative; /* 相対位置を設定 */
+  z-index: 20; /* プレビューより上に表示 */
+}
+
+.name-inputs .control-group {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.name-inputs label {
+  flex: 0 0 80px;
+}
+
+.name-inputs input {
+  flex: 1;
+  padding: 5px;
+  font-size: 16px;
+}
+
+#coverBack {
+  z-index: 10; /* 裏の画像を最上位に表示 */
+  display: none; /* 初期状態では非表示 */
+}
+
+.back-preview {
+  display: flex;
+  justify-content: center; /* 中央揃え */
+  align-items: center; /* 縦方向中央揃え */
+  position: relative; /* 相対位置を設定 */
 }
