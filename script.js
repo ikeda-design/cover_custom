@@ -243,6 +243,20 @@ function loadSelections() {
       updateImage('motion', `images/motion/motion_${motion}.png`);
   }
 
+    // カバー色を日本語に変換
+    const coverColorMap = {
+      'BL': 'ブルー',
+      'BR': 'チャコール',
+      'PI': 'ピンク',
+      'PU': 'パープル'
+    };
+
+    const titleIconMap = {
+      'kuma': 'くま',
+      'usagi': 'うさぎ',
+      'non': 'なし'
+    };
+
   // 名前を表示
   document.getElementById('kanjiNameDisplay').textContent = kanjiName;
   document.getElementById('hiraganaNameDisplay').textContent = hiraganaName;
@@ -253,8 +267,8 @@ function loadSelections() {
   document.getElementById('hairStyleText').textContent = hair || '未選択';
   document.getElementById('hairColorText').textContent = hairColor || 'なし';
   document.getElementById('motionText').textContent = motion || '未選択';
-  document.getElementById('coverColor').textContent = coverColor;
-  document.getElementById('titleIconText').textContent = titleIcon;
+  document.getElementById('coverColor').textContent = coverColorMap[coverColor] || '未選択';
+  document.getElementById('titleIconText').textContent = titleIconMap[titleIcon] || '未選択';
   document.getElementById('kanjiName').textContent = kanjiName || '未入力';
   document.getElementById('hiraganaName').textContent = hiraganaName || '未入力';
   document.getElementById('romajiName').textContent = romajiName || '未入力';
