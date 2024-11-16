@@ -278,3 +278,59 @@ button:active {
   align-items: center; /* 縦方向中央揃え */
   position: relative; /* 相対位置を設定 */
 }
+
+/* page3専用のスタイル */
+/* .step2 .controls {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 420px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+/* .step2 .control-group {
+  width: 250px;
+} */
+
+/* .step2 .preview {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 284px;
+  height: 400px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  z-index: 100;
+} */
+
+/* .confirm .preview {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  z-index: 100;
+} */
+
+/* .confirm .selections {
+  position: relative;
+  margin-top: 420px;
+  width: 100%;
+  text-align: center;
+} */
+
+/* .confirm.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+} */
+
+/* .confirm .selections h2 {
+  margin-top: 20px;
+} */

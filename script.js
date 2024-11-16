@@ -195,3 +195,125 @@ function saveSelections() {
     console.log(`表示状態が切り替わりました: ${isFront ? '表' : '裏'}`);
   });
   
+  function saveSelectionsAndNavigate(page) {
+    // 選択した内容をローカルストレージに保存
+    localStorage.setItem('kanjiName', document.getElementById('kanjiName').value);
+    localStorage.setItem('hiraganaName', document.getElementById('hiraganaName').value);
+    localStorage.setItem('romajiName', document.getElementById('romajiName').value);
+    localStorage.setItem('coverColor', document.querySelector('input[name="coverColor"]:checked').value);
+    localStorage.setItem('titleIcon', document.querySelector('input[name="titleIcon"]:checked').value);
+    
+    // 確認ページへ遷移
+    window.location.href = page;
+}
+
+function loadSelections() {
+  // Step1の選択内容を取得
+  const face = localStorage.getItem('face');
+  const hair = localStorage.getItem('hair');
+  const hairColor = localStorage.getItem('hairColor');
+  const motion = localStorage.getItem('motion');
+  const isBabyHairStyle = localStorage.getItem('isBabyHairStyle') === 'true';
+  const kanjiName = localStorage.getItem('kanjiName');
+  const hiraganaName = localStorage.getItem('hiraganaName');
+  const romajiName = localStorage.getItem('romajiName');
+  const coverColor = localStorage.getItem('coverColor');
+  const titleIcon = localStorage.getItem('titleIcon');
+
+  console.log('読み込んだ値:', { face, hair, hairColor, motion, isBabyHairStyle, kanjiName, hiraganaName, romajiName, coverColor, titleIcon }); // デバッグ用
+
+  // プレビュー画像の更新
+  if (face && hair && motion) {
+      const faceType = hair === '04' ? 'noear' : '';
+      updateImage('face', `images/face/face_${face}${faceType}.png`);
+      
+      if (isBabyHairStyle) {
+          updateImage('hair', `images/hair/hair_Baby_${hair}.png`);
+          document.getElementById('hairBack').style.display = 'none';
+      } else {
+          updateImage('hair', `images/hair/hair_${hair}_${hairColor || 'BK'}.png`);
+          if (hair === '04' || hair === '05') {
+              updateImage('hairBack', `images/hair/hair_${hair}_${hairColor || 'BK'}_Back.png`);
+              document.getElementById('hairBack').style.display = 'block';
+          } else {
+              document.getElementById('hairBack').style.display = 'none';
+          }
+      }
+      
+      updateImage('motion', `images/motion/motion_${motion}.png`);
+  }
+
+  // 名前を表示
+  document.getElementById('kanjiNameDisplay').textContent = kanjiName;
+  document.getElementById('hiraganaNameDisplay').textContent = hiraganaName;
+  document.getElementById('romajiNameDisplay').textContent = romajiName;
+
+  // 選択内容のテキスト表示を更新
+  document.getElementById('faceColorText').textContent = face || '未選択';
+  document.getElementById('hairStyleText').textContent = hair || '未選択';
+  document.getElementById('hairColorText').textContent = hairColor || 'なし';
+  document.getElementById('motionText').textContent = motion || '未選択';
+  document.getElementById('coverColor').textContent = coverColor;
+  document.getElementById('titleIconText').textContent = titleIcon;
+  document.getElementById('kanjiName').textContent = kanjiName || '未入力';
+  document.getElementById('hiraganaName').textContent = hiraganaName || '未入力';
+  document.getElementById('romajiName').textContent = romajiName || '未入力';
+}
+
+function updatePreview() {
+    // Step1の選択内容を取得
+    const face = localStorage.getItem('face');
+    const hair = localStorage.getItem('hair');
+    const hairColor = localStorage.getItem('hairColor');
+    const motion = localStorage.getItem('motion');
+    const isBabyHairStyle = localStorage.getItem('isBabyHairStyle') === 'true';
+
+    // Step2の選択内容を取得
+    const coverColor = localStorage.getItem('coverColor');
+    const titleIcon = localStorage.getItem('titleIcon');
+    const kanjiName = localStorage.getItem('kanjiName');
+    const hiraganaName = localStorage.getItem('hiraganaName');
+    const romajiName = localStorage.getItem('romajiName');
+
+    // プレビュー画像の更新
+    // 1. 表紙の背景と装飾
+    updateImage('cover', `images/back/back_${coverColor}.png`);
+    updateImage('titleIcon', `images/title/title_${titleIcon}.png`);
+
+    // 2. キャラクター画像
+    if (face && hair && motion) {
+        const faceType = hair === '04' ? 'noear' : '';
+        updateImage('face', `images/face/face_${face}${faceType}.png`);
+        
+        if (isBabyHairStyle) {
+            updateImage('hair', `images/hair/hair_Baby_${hair}.png`);
+            document.getElementById('hairBack').style.display = 'none';
+        } else {
+            updateImage('hair', `images/hair/hair_${hair}_${hairColor || 'BK'}.png`);
+            if (hair === '04' || hair === '05') {
+                updateImage('hairBack', `images/hair/hair_${hair}_${hairColor || 'BK'}_Back.png`);
+                document.getElementById('hairBack').style.display = 'block';
+            } else {
+                document.getElementById('hairBack').style.display = 'none';
+            }
+        }
+        
+        updateImage('motion', `images/motion/motion_${motion}.png`);
+    }
+
+    // 3. 名前の表示
+    if (document.getElementById('kanjiNameDisplay')) {
+        document.getElementById('kanjiNameDisplay').textContent = kanjiName;
+        document.getElementById('hiraganaNameDisplay').textContent = hiraganaName;
+        document.getElementById('romajiNameDisplay').textContent = romajiName;
+    }
+
+    // プレビューのスタイルを設定
+    const previewContainer = document.getElementById('preview');
+    if (previewContainer) {
+        previewContainer.style.position = 'relative';
+        previewContainer.style.width = '284px';  // page2.htmlと同じサイズに
+        previewContainer.style.height = '400px';
+        previewContainer.style.margin = '0 auto';
+    }
+}

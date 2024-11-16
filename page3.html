@@ -3,41 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>顔イラストカスタマイズ - 確認</title>
+  <title>表紙カスタマイズ - Step 3</title>
   <link rel="stylesheet" href="styles.css">
+  <script>
+    (function(d) {
+      var config = {
+        kitId: 'sak3tuz',
+        scriptTimeout: 3000,
+        async: true
+      },
+      h=d.documentElement,t=setTimeout(function(){h.className=h.className.replace(/\bwf-loading\b/g,"")+" wf-inactive";},config.scriptTimeout),tk=d.createElement("script"),f=false,s=d.getElementsByTagName("script")[0],a;h.className+=" wf-loading";tk.src='https://use.typekit.net/'+config.kitId+'.js';tk.async=true;tk.onload=tk.onreadystatechange=function(){a=this.readyState;if(f||a&&a!="complete"&&a!="loaded")return;f=true;clearTimeout(t);try{Typekit.load(config)}catch(e){}};s.parentNode.insertBefore(tk,s)
+    })(document);
+  </script>
 </head>
 <body>
-  <h1>確認：うちの子できたよ！</h1>
+  <h1>Step 3 : 確認</h1>
 
-  <div class="container confirm">
+  <div class="container step2">
     <div class="preview" id="preview">
-      <img id="face" src="" alt="肌の色">
-      <img id="hair" src="" alt="髪型">
-      <img id="motion" src="" alt="表情">
-      <img id="clothes" src="" alt="服">
+      <img id="coverBack" src="images/back/back_BL_name.png" alt="カバーの裏">
+      <img id="cover" src="images/back/back_BL.png" alt="表紙の色">
+      <img id="titleIcon" src="images/title/title_kuma.png" alt="タイトル装飾">
+      <img id="face" alt="肌の色">
+      <img id="hair" alt="髪型">
+      <img id="hairBack" src="" alt="髪の背面" style="display: none;">
+      <img id="motion" alt="表情">
+      <p id="hiraganaNameDisplay" class="hiragana"></p>
+      <p id="kanjiNameDisplay" class="kanji"></p>
+      <p id="romajiNameDisplay" class="romaji"></p>
     </div>
 
-    <div class="selections">
+    <div class="controls">
       <h2>選択内容</h2>
-      <p>肌の色: <span id="faceColorText"></span></p>
-      <p>髪型: <span id="hairStyleText"></span></p>
-      <p>髪色: <span id="hairColorText"></span></p>
-      <p>表情: <span id="motionText"></span></p>
-      <p>服: <span id="clothesText"></span></p>
-    </div>
+      <div class="control-group">
+        <p>肌の色: <span id="faceColorText"></span></p>
+        <p>髪型: <span id="hairStyleText"></span></p>
+        <p>髪色: <span id="hairColorText"></span></p>
+        <p>表情: <span id="motionText"></span></p>
+        <p>カバー色: <span id="coverColor"></span></p>
+        <p>タイトル装飾: <span id="titleIconText"></span></p>
+        <p>漢字: <span id="kanjiName"></span></p>
+        <p>ひらがな: <span id="hiraganaName"></span></p>
+        <p>ローマ字: <span id="romajiName"></span></p>
+      </div>
 
-    <div class="buttons">
-      <button onclick="window.location.href='index.html'">最初からやり直す</button>
-      <button onclick="saveImage()">画像を保存</button>
+      <button onclick="goBack()">戻る</button>
     </div>
   </div>
 
   <script src="script.js"></script>
   <script>
     window.onload = function() {
+      console.log('選択内容を読み込みます...');
       loadSelections();
+      console.log('プレビューを更新します...');
       updatePreview();
-      updateSelectionText();
     }
   </script>
 </body>
