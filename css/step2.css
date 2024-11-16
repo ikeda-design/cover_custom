@@ -3,6 +3,13 @@
   height: 400px;
 }
 
+.step2 .controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 450px;
+}
+
 .step2 #cover, 
 .step2 #titleIcon {
   width: 100%;

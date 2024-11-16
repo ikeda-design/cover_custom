@@ -3,6 +3,13 @@
   height: 300px;
 }
 
+.step1 .controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 300px;
+}
+
 .step1 #face, 
 .step1 #hair, 
 .step1 #motion {
