@@ -279,58 +279,35 @@ button:active {
   position: relative; /* 相対位置を設定 */
 }
 
-/* page3専用のスタイル */
-/* .step2 .controls {
+.selection-table {
   width: 100%;
-  max-width: 800px;
-  margin-top: 420px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
+  max-width: 400px;
+  margin: 20px auto;
+  border-collapse: collapse;
+  background-color: white;
+  border-radius: 5px;
+  overflow: hidden;
+}
 
-/* .step2 .control-group {
-  width: 250px;
-} */
+.selection-table th,
+.selection-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  font-size: 14px;
+  line-height: 1.2;
+}
 
-/* .step2 .preview {
-  position: fixed;
-  top: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 284px;
-  height: 400px;
-  margin-bottom: 20px;
-  background-color: #ffffff;
-  z-index: 100;
-} */
+.selection-table th {
+  background-color: #b3b3b3;
+  color: black;
+  font-weight: normal;
+}
 
-/* .confirm .preview {
-  position: fixed;
-  top: 80px;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 20px;
-  background-color: #ffffff;
-  z-index: 100;
-} */
+.selection-table tr:last-child td {
+  border-bottom: none;
+}
 
-/* .confirm .selections {
-  position: relative;
-  margin-top: 420px;
-  width: 100%;
-  text-align: center;
-} */
-
-/* .confirm.container {
-  width: 100%;
-  max-width: 800px;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-} */
-
-/* .confirm .selections h2 {
-  margin-top: 20px;
-} */
+.selection-table tr:nth-child(even) {
+  background-color: #f8f8f8;
+}
