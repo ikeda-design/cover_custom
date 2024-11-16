@@ -163,38 +163,85 @@ function saveSelections() {
   let isFront = true; // 表示状態を管理
   let currentColor = 'BL'; // 初期色を設定（例: 'BL'）
 
-  document.getElementById('togglePreview').addEventListener('click', function() {
-    const frontPreview = document.querySelector('.step1 .preview');
-    const backPreview = document.querySelector('.step2 .preview');
+  // document.getElementById('togglePreview').addEventListener('click', function() {
+  //   const frontPreview = document.querySelector('.step1 .preview');
+  //   const backPreview = document.querySelector('.step2 .preview');
   
+  //   // 裏の画像を色に応じて指定
+  //   const backImageMap = {
+  //     'BL': 'images/back/back_BL_name.png',
+  //     'BR': 'images/back/back_BR_name.png',
+  //     'PI': 'images/back/back_PI_name.png',
+  //     'PU': 'images/back/back_PU_name.png'
+  //   };
+  
+  //   // 裏の画像を設定
+  //   backPreview.style.backgroundImage = `url(${backImageMap[currentColor]})`;
+  //   console.log(`裏の画像を設定しました: ${backImageMap[currentColor]}`);
+  
+  //   if (isFront) {
+  //     updateImage('coverBack', backImageMap[currentColor]);
+  //     coverBack.style.display = 'block'; // 裏を表示
+  //     romajiNameDisplay.style.display = 'block';
+
+  //     console.log('表を非表示にし、裏を表示しました。');
+  //   } else {
+  //     coverBack.style.display = 'none'; // 裏を非表示
+  //     romajiNameDisplay.style.display = 'none';
+  //     console.log('裏を非表示にし、表を表示しました。');
+  //   }
+    
+  //   isFront = !isFront; // 状態を切り替え
+  //   console.log(`表示状態が切り替わりました: ${isFront ? '表' : '裏'}`);
+  // });
+  
+  document.getElementById('togglePreview').addEventListener('click', function() {
+    const preview = document.querySelector('.step2 .preview');
+    
     // 裏の画像を色に応じて指定
     const backImageMap = {
-      'BL': 'images/back/back_BL_name.png',
-      'BR': 'images/back/back_BR_name.png',
-      'PI': 'images/back/back_PI_name.png',
-      'PU': 'images/back/back_PU_name.png'
+        'BL': 'images/back/back_BL_name.png',
+        'BR': 'images/back/back_BR_name.png',
+        'PI': 'images/back/back_PI_name.png',
+        'PU': 'images/back/back_PU_name.png'
     };
-  
-    // 裏の画像を設定
-    backPreview.style.backgroundImage = `url(${backImageMap[currentColor]})`;
-    console.log(`裏の画像を設定しました: ${backImageMap[currentColor]}`);
-  
-    if (isFront) {
-      updateImage('coverBack', backImageMap[currentColor]);
-      coverBack.style.display = 'block'; // 裏を表示
-      romajiNameDisplay.style.display = 'block';
 
-      console.log('表を非表示にし、裏を表示しました。');
+    if (isFront) {
+        // 表から裏への切り替え
+        document.getElementById('cover').style.display = 'none';
+        document.getElementById('titleIcon').style.display = 'none';
+        document.getElementById('face').style.display = 'none';
+        document.getElementById('hair').style.display = 'none';
+        document.getElementById('hairBack').style.display = 'none';
+        document.getElementById('motion').style.display = 'none';
+        document.getElementById('hiraganaNameDisplay').style.display = 'none';
+        document.getElementById('kanjiNameDisplay').style.display = 'none';
+        
+        document.getElementById('coverBack').src = backImageMap[currentColor];
+        document.getElementById('coverBack').style.display = 'block';
+        document.getElementById('romajiNameDisplay').style.display = 'block';
+        
+        console.log('表を非表示にし、裏を表示しました。');
     } else {
-      coverBack.style.display = 'none'; // 裏を非表示
-      romajiNameDisplay.style.display = 'none';
-      console.log('裏を非表示にし、表を表示しました。');
+        // 裏から表への切り替え
+        document.getElementById('cover').style.display = 'block';
+        document.getElementById('titleIcon').style.display = 'block';
+        document.getElementById('face').style.display = 'block';
+        document.getElementById('hair').style.display = 'block';
+        document.getElementById('motion').style.display = 'block';
+        document.getElementById('hiraganaNameDisplay').style.display = 'block';
+        document.getElementById('kanjiNameDisplay').style.display = 'block';
+        
+        document.getElementById('coverBack').style.display = 'none';
+        document.getElementById('romajiNameDisplay').style.display = 'none';
+        
+        console.log('裏を非表示にし、表を表示しました。');
     }
     
-    isFront = !isFront; // 状態を切り替え
+    isFront = !isFront;
     console.log(`表示状態が切り替わりました: ${isFront ? '表' : '裏'}`);
   });
-  
+
   function saveSelectionsAndNavigate(page) {
     // 選択した内容をローカルストレージに保存
     localStorage.setItem('kanjiName', document.getElementById('kanjiName').value);
