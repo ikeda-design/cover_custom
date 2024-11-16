@@ -1,7 +1,23 @@
+/* step3のプレビュー設定を完全に上書き */
 .step3 .preview {
+    position: relative !important;  /* common.cssのfixedを上書き */
+    top: auto !important;          /* common.cssのtop位置を解除 */
+    left: auto !important;         /* common.cssのleft位置を解除 */
+    transform: none !important;    /* common.cssのtransformを解除 */
     width: 284px;
     height: 400px;
-  }
+    margin: 0 auto;               /* 中央寄せ */
+    background-color: #ffffff;
+}
+
+/* 以下は既存のスタイル */
+.step3 .preview img {
+    position: absolute;
+}
+/* プレビューとテーブルの間隔を調整 */
+.step3 .controls {
+    margin-top: 0px;  /* common.cssの400pxから変更 */
+}
   
   .step3 #cover, 
   .step3 #titleIcon {
@@ -27,14 +43,6 @@
     text-align: center;
     width: 80%;
     z-index: 10;
-  }
-  
-  .toggle-button-container {
-    position: fixed;
-    top: 470px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 200;
   }
   
   #hiraganaNameDisplay {
@@ -66,10 +74,11 @@
     color: white;
   }
 
+  /* 選択内容テーブル */
   .selection-table {
     width: 100%;
     max-width: 400px;
-    margin: 20px auto;
+    margin: 10px auto;
     border-collapse: collapse;
     background-color: white;
     border-radius: 5px;
