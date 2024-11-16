@@ -257,6 +257,37 @@ function loadSelections() {
       'non': 'なし'
     };
 
+  // 髪型の表示テキストを設定
+  let hairStyleDisplayText = '';
+  if (isBabyHairStyle) {
+    hairStyleDisplayText = `ベビー${hair}`;
+  } else {
+    // 髪型と色の組み合わせによる番号のマッピング
+    const hairStyleMap = {
+      '01_BK': '04',
+      '02_BK': '05',
+      '03_BK': '06',
+      '04_BK': '07',
+      '05_BK': '08',
+      '06_BK': '09',
+      '01_BR': '10',
+      '02_BR': '11',
+      '03_BR': '12',
+      '04_BR': '13',
+      '05_BR': '14',
+      '06_BR': '15'
+    };
+    
+    const hairKey = `${hair}_${hairColor}`;
+    hairStyleDisplayText = hairStyleMap[hairKey] || '未選択';
+  }
+
+  const hairColorMap = {
+    'BK': '黒',
+    'BR': '茶色',
+    '': '-'
+  };
+
   // 名前を表示
   document.getElementById('kanjiNameDisplay').textContent = kanjiName;
   document.getElementById('hiraganaNameDisplay').textContent = hiraganaName;
@@ -264,8 +295,8 @@ function loadSelections() {
 
   // 選択内容のテキスト表示を更新
   document.getElementById('faceColorText').textContent = face || '未選択';
-  document.getElementById('hairStyleText').textContent = hair || '未選択';
-  document.getElementById('hairColorText').textContent = hairColor || 'なし';
+  document.getElementById('hairStyleText').textContent = hairStyleDisplayText;
+  document.getElementById('hairColorText').textContent = hairColorMap[hairColor] || 'なし';
   document.getElementById('motionText').textContent = motion || '未選択';
   document.getElementById('coverColor').textContent = coverColorMap[coverColor] || '未選択';
   document.getElementById('titleIconText').textContent = titleIconMap[titleIcon] || '未選択';
