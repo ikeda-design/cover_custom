@@ -1,0 +1,18 @@
+.step1 .preview {
+  width: 300px;
+  height: 300px;
+}
+
+.step1 #face, 
+.step1 #hair, 
+.step1 #motion {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+#hairBack { z-index: 1; }
+#face { z-index: 2; }
+#hair { z-index: 3; }
+#motion { z-index: 4; }

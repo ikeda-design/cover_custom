@@ -1,0 +1,110 @@
+body {
+  font-family: 'FOT-筑紫A丸ゴシック Std', sans-serif;
+  font-family: "fot-tsukuardgothic-std", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  text-align: center;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+  padding-top: 100px;
+}
+
+h1 {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 20px;
+  z-index: 101;
+  font-size: 30px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.controls h2 {
+  background-color: #b3b3b3;
+  color: black;
+  width: 250px;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 65px;
+  margin-bottom: 0px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  padding: 15px;
+  margin-top: 0px;
+  margin-bottom: 20px;
+}
+
+label {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.preview {
+  position: fixed;
+  top: 80px;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 20px;
+  background-color: #ffffff;
+  z-index: 100;
+}
+
+.preview img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 400px;
+}
+
+button {
+  font-size: 18px;
+  padding: 12px 24px;
+  margin: 20px 0;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+.hidden {
+  display: none;
+}
