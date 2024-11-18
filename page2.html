@@ -41,24 +41,34 @@
 
     <div class="controls">
       <h2>名前</h2>
-      <div class="control-group">
-        <label for="kanjiLastName">名字：</label>
-        <input type="text" id="kanjiLastName" oninput="updateNamePreview()">
-        <label for="kanjiFirstName">名前：</label>
-        <input type="text" id="kanjiFirstName" oninput="updateNamePreview()">
+      <div class="name-section">
+        <div class="front-side">
+          <h3>表面に表示</h3>
+          <div class="control-group">
+            <label for="kanjiLastName">名字(漢字)：</label>
+            <input type="text" id="kanjiLastName" oninput="updateNamePreview()">
+            <label for="kanjiFirstName">名前(漢字)：</label>
+            <input type="text" id="kanjiFirstName" oninput="updateNamePreview()">
+          </div>
+          <div class="control-group">
+            <label for="hiraganaLastName">みょうじ(ひらがな)：</label>
+            <input type="text" id="hiraganaLastName" oninput="updateNamePreview()">
+            <label for="hiraganaFirstName">なまえ(ひらがな)：</label>
+            <input type="text" id="hiraganaFirstName" oninput="updateNamePreview()">
+          </div>
+        </div>
+        
+        <div class="back-side">
+          <h3>裏面に表示</h3>
+          <div class="control-group">
+            <label for="romajiName">ローマ字(小文字)：</label>
+            <input type="text" id="romajiName" 
+                   oninput="this.value = this.value.toLowerCase(); updateNamePreview();" 
+                   pattern="[a-z\s]*">
+          </div>
+        </div>
       </div>
-      <div class="control-group">
-        <label for="hiraganaLastName">みょうじ：</label>
-        <input type="text" id="hiraganaLastName" oninput="updateNamePreview()">
-        <label for="hiraganaFirstName">なまえ：</label>
-        <input type="text" id="hiraganaFirstName" oninput="updateNamePreview()">
-      </div>
-      <div class="control-group">
-        <label for="romajiName">ローマ字(小文字)：</label>
-        <input type="text" id="romajiName" 
-               oninput="this.value = this.value.toLowerCase(); updateNamePreview();" 
-               pattern="[a-z\s]*">
-      </div>
+
       <h2>表紙の色</h2>
       <div class="control-group">
         <label>
