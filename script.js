@@ -142,14 +142,16 @@ function saveSelections() {
       console.log('page2.html以外のページが読み込まれました');
     }
   };
-
+  
   function updateNamePreview() {
-    const kanjiName = document.getElementById('kanjiName').value;
-    const hiraganaName = document.getElementById('hiraganaName').value;
-    const romajiName = document.getElementById('romajiName').value;
-    
-    document.getElementById('kanjiNameDisplay').textContent = kanjiName;
-    document.getElementById('hiraganaNameDisplay').textContent = hiraganaName;
+    const kanjiLastName = document.getElementById('kanjiLastName').value;
+    const kanjiFirstName = document.getElementById('kanjiFirstName').value;
+    const hiraganaLastName = document.getElementById('hiraganaLastName').value;
+    const hiraganaFirstName = document.getElementById('hiraganaFirstName').value;
+    const romajiName = document.getElementById('romajiName').value.toLowerCase(); // 小文字に変換
+
+    document.getElementById('kanjiNameDisplay').textContent = kanjiLastName + ' ' + kanjiFirstName;
+    document.getElementById('hiraganaNameDisplay').textContent = hiraganaLastName + ' ' + hiraganaFirstName;
     document.getElementById('romajiNameDisplay').textContent = romajiName;
   }
   
@@ -244,15 +246,21 @@ function saveSelections() {
 
   function saveSelectionsAndNavigate(page) {
     // 選択した内容をローカルストレージに保存
-    localStorage.setItem('kanjiName', document.getElementById('kanjiName').value);
-    localStorage.setItem('hiraganaName', document.getElementById('hiraganaName').value);
-    localStorage.setItem('romajiName', document.getElementById('romajiName').value);
+    const kanjiLastName = document.getElementById('kanjiLastName').value;
+    const kanjiFirstName = document.getElementById('kanjiFirstName').value;
+    const hiraganaLastName = document.getElementById('hiraganaLastName').value;
+    const hiraganaFirstName = document.getElementById('hiraganaFirstName').value;
+    const romajiName = document.getElementById('romajiName').value;
+
+    localStorage.setItem('kanjiName', kanjiLastName + ' ' + kanjiFirstName);
+    localStorage.setItem('hiraganaName', hiraganaLastName + ' ' + hiraganaFirstName);
+    localStorage.setItem('romajiName', romajiName);
     localStorage.setItem('coverColor', document.querySelector('input[name="coverColor"]:checked').value);
     localStorage.setItem('titleIcon', document.querySelector('input[name="titleIcon"]:checked').value);
     
     // 確認ページへ遷移
     window.location.href = page;
-}
+  }
 
 function loadSelections() {
   // Step1の選択内容を取得
